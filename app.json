@@ -12,7 +12,7 @@
       "appleTeamId": "QRKZX32XMT",
       "buildNumber": "1",
       "infoPlist": {
-        "NSCameraUsageDescription": "バーコードをスキャンして商品価格を検索するために使用します。",
+        "NSCameraUsageDescription": "バーコードをスキャンして商品価格を検索するためにカメラを使用します。",
         "NSPhotoLibraryUsageDescription": "商品バーコードの画像を読み込むために使用します。",
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -26,8 +26,7 @@
       },
       "predictiveBackGestureEnabled": false,
       "permissions": [
-        "android.permission.CAMERA",
-        "android.permission.RECORD_AUDIO"
+        "android.permission.CAMERA"
       ],
       "package": "jp.sukari.app"
     },
@@ -35,7 +34,15 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-camera"
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "バーコードをスキャンして商品価格を検索するためにカメラを使用します。",
+          "microphonePermission": "カメラ機能で動画を撮影する場合に、撮影中の音声を録音するためにマイクを使用します。録音した音声は動画ファイルに含まれ、外部に送信しません。",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": true
+        }
+      ]
     ],
     "extra": {
       "eas": {
